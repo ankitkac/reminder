@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Reminder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="6995931.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><span class="icon">🎉</span> Birthday Reminder</h1>
+                <div class="header-controls">
+                    <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="add-birthday-btn" class="btn primary floating-btn">
+                        <i class="fas fa-plus"></i> Add Birthday
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="birthday-form-container" id="form-container">
+                <div class="form-backdrop"></div>
+                <form id="birthday-form" class="birthday-form glass-card">
+                    <div class="form-header">
+                        <h2><span class="form-icon">🎂</span> <span id="form-title">Add New Birthday</span></h2>
+                        <button type="button" id="cancel-btn" class="icon-btn close-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" required placeholder="Enter person's name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthdate">Birthdate</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-calendar-day input-icon"></i>
+                                <input type="date" id="birthdate" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary">
+                            <span class="btn-content">
+                                <i class="fas fa-save"></i>
+                                <span>Save Birthday</span>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="birthdays-list">
+                <div class="list-header glass-card">
+                    <h2><i class="fas fa-birthday-cake"></i> Upcoming Birthdays</h2>
+                    <div class="sort-controls">
+                        <div class="select-wrapper">
+                            <select id="sort-by">
+                                <option value="date">Date (Soonest)</option>
+                                <option value="name">Name</option>
+                                <option value="days">Days Left</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards-container" id="cards-container">
+                    <!-- Birthday cards will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="notification-banner glass-card" id="notification-banner">
+        <div class="notification-content"></div>
+        <button class="close-notification"><i class="fas fa-times"></i></button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
